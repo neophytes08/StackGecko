@@ -1,11 +1,13 @@
-# **GeckoRest Library**
+<br /><br />
+# **GeckoRest Library** 
 
 A Javascript library for GeckoRest API. 
-            
+<br /><br />    
 ##**Features**
 
 * Using POST, GET, DELETE and UPDATE methods.
 * Using Pre-defined functions to create HTTP Requests.
+<br /><br />
 
 ## **Installation**
 * **Manual** : download latest from <a href="google.com">here</a>
@@ -14,9 +16,8 @@ A Javascript library for GeckoRest API.
 <script src="jquery.min.js"></script> <!-- GeckoRest is dependent on Jquery library-->
 <script src="geckorest.js"></script> 
 ```
-
+<br /><br />
 ## **Usage**
-
 ### **Initialization**
 
 >Initialize first the library by using this syntax:
@@ -24,7 +25,7 @@ A Javascript library for GeckoRest API.
 ```
 GeckoRest.init('<stackgecko_id>');
 ```
-
+<br /><br />
 >After initializing the library, you can now use the following functions:
 
 ### REGISTER
@@ -45,7 +46,7 @@ GeckoREST.register(endpoint, email, password)
 | email            | Email             |true      |
 | password         | Password          |true      |
   
-  
+<br /><br />  
 ### SIGNIN
 
 ```
@@ -63,10 +64,10 @@ GeckoREST.signin(endpoint, email, password)
 | email            | Email             |true      |
 | password         | Password          |true      |
 
->
->Signin function will response with 'id' and 'jwt' (jsonwebtoken). This jwt or access token will be the one to interact your apis as well as authentication in certain resource. Jwt will be stored in local storage as token. You can access it by using `window.localStorage.getItem('token')`.
->
 
+>Signin function will response with 'id' and 'jwt' (jsonwebtoken). This jwt or access token will be the one to interact your apis as well as authentication in certain resource. Jwt will be stored in local storage as token. You can access it by using `window.localStorage.getItem('token')`.
+
+<br /><br />
 ### SIGNOUT
 
 ```
@@ -76,7 +77,7 @@ GeckoREST.signout()
 >This function will remove the token from localStorage.
 >
 
-
+<br /><br />
 ### GET
 ```
 GeckoREST.list(endpoint, [query], [options])
@@ -94,6 +95,7 @@ GeckoREST.list(endpoint, [query], [options])
 | query(optional)  | Filters             |false     |
 | options(optional)| HTTP request headers|false     |
 
+<br /><br />
 ### GET BY ID
 
 ```
@@ -112,6 +114,7 @@ GeckoREST.fetch(endpoint, id, [options])
 | id               | ID                  |true      |
 | options(optional)| HTTP request headers|false     |
 
+<br /><br />
 ### CREATE
 
 ```
@@ -130,6 +133,7 @@ GeckoREST.create(endpoint, data, [options])
 | data             | Data Object to Create|true      |
 | options(optional)| HTTP request headers |false     |
 
+<br /><br />
 ### UPDATE
 
 ```
@@ -149,6 +153,7 @@ GeckoREST.update(endpoint, id, data, [options])
 | id               | id                   |true      |
 | options(optional)| HTTP request headers |false     |
 
+<br /><br />
 ### DELETE
 
 ```
@@ -166,6 +171,7 @@ GeckoREST.delete(endpoint, id)
 | endpoint         | Database Table       |true      | 
 | id               | id                   |true      |
 
+<br /><br />
 ## Parameter Values
 
 ### QUERIES
@@ -185,6 +191,23 @@ These are filters for retrieving data
 | *        | For datatypes like boolean, integer, number and unanazlyed strings, this will return exact values.|
 |          | For datatype string and analyzed, this will perform a full-text search.|
 
+**Sample**
+
+```
+var query = {
+       from :    1,
+       size :    99,
+       sort :    "name",
+       order :   "asc",
+       age_lt :  7, 
+       age_lte : 7, 
+       age_gt :  7, 
+       age_gte:  7, 
+       name :    "jeamar"
+}
+```
+
+<br /><br />
 ### OPTIONS
 
 >You can use Authorization header if your resource is set to "private". Format will be:
@@ -199,4 +222,3 @@ var options = {
 		'Authorization': 'Bearer ' + token					
 }
 ```
-
