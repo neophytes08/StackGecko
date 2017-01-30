@@ -350,7 +350,6 @@
 		// }
 
 		function getQuery(query){
-			console.log(query);
 			if( query ){
 				var no_of_opt = $.keyCount(query);
 		    	var opt = "?";
@@ -373,7 +372,6 @@
 		}
 
 		function setHeaders(options,xhr){
-			console.log(options);
 			if( options ){
 	    		$.each(options, function(i, elem) {
 
